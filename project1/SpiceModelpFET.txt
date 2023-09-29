@@ -1,0 +1,7 @@
+pFET Spice Model
+.model MyPMOSFET PMOS(Level=12 KP=1e-4 Vto=-0.92 Is=1e-15 Gamma=0.6213 Phi=0.3787)
+M1 Nd Ng Ns Ns MyPMOSFET L=3000e-9
+V1 Ns gnd 1.8
+V2 Ng gnd 1.015
+V3 Nd gnd 0
+.dc V3 0 1.8 0.01

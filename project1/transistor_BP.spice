@@ -1,0 +1,5 @@
+* SPICE3 file created from transistor_BP.ext - technology: sky130A
+
+.option scale=10000u
+
+X0 vdd vin GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=150 l=150

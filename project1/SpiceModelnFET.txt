@@ -1,0 +1,8 @@
+nFET Spice Model
+.model MyMOSFET NMOS(Level=12 KP=.00029 Vto=0.58 Is=1.84e-14 Gamma=0.4 Phi=0.6 Lambda=0.0588)
+* Kp correct, Vto correct, Level correct, Phi and Gamma can still be adjusted, but generally this is a very very good estimate, I wouldn't change things too much
+M1 Nd Nd Ns gnd MyMOSFET L=3000e-9
+V1 Nd gnd 0
+V2 Ns gnd 0
+V3 Ng gnd 0
+.dc V2 0 1.8 0.01

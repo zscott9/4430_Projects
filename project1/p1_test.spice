@@ -1,0 +1,13 @@
+**.subckt p1_test
+M1 vdd vin GND GND MyMOSFET w=5u l=0.18u m=1
+**** begin user architecture code
+
+
+.model MyMOSFET NMOS(Level=12 KP=.00029 Vto=0.58 Is=1.84e-14 Gamma=0.4 Phi=0.6 Lambda=0.0588)
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+** flattened .save nodes
+.end

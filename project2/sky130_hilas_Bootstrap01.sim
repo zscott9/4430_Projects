@@ -20,7 +20,7 @@ x NBIAS a_n454_n612# PBIAS VGND l=20 w=596 x=-334 y=-613 sky130_fd_pr__nfet_01v8
 x NBIAS PBIAS a_n454_n612# VGND l=20 w=596 x=-179 y=-613 sky130_fd_pr__nfet_01v8
 x NBIAS a_n454_n612# PBIAS VGND l=20 w=596 x=75 y=-613 sky130_fd_pr__nfet_01v8
 x NBIAS PBIAS a_n454_n612# VGND l=20 w=596 x=330 y=-613 sky130_fd_pr__nfet_01v8
-C PBIAS a_n454_n612# 15.95
+C a_n454_n612# PBIAS 15.95
 R PBIAS 30431
 R RESIST 68
 R NBIAS 32497

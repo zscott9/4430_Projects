@@ -119,7 +119,7 @@ rnode "NBIAS.n0" 0 0 760 -200 0
 rnode "NBIAS.n1" 0 0 769 -164 0
 rnode "NBIAS.n2" 0 0 769 -164 0
 rnode "NBIAS.n3" 0 0 769 -314 0
-rnode "NBIAS.t0" 0 0 755 -309 0
+rnode "NBIAS.t2" 0 0 755 -309 0
 rnode "NBIAS.n4" 0 0 769 -314 0
 rnode "NBIAS.n5" 0 0 769 -314 0
 rnode "NBIAS.n6" 0 0 769 -127 0
@@ -136,7 +136,7 @@ rnode "NBIAS.n16" 0 0 577 -202 0
 rnode "NBIAS.n17" 0 0 619 -118 0
 rnode "NBIAS.n18" 0 0 619 -118 0
 rnode "NBIAS.n19" 0 0 577 -127 0
-rnode "NBIAS.t1" 0 0 551 -118 0
+rnode "NBIAS.t0" 0 0 551 -118 0
 rnode "NBIAS.t7" 0 0 442 -316 0
 rnode "NBIAS.t6" 0 0 391 -316 0
 rnode "NBIAS.t18" 0 0 340 -316 0
@@ -174,7 +174,7 @@ rnode "NBIAS.n37" 0 0 576 -73 0
 rnode "NBIAS.n38" 0 0 619 -146 0
 rnode "NBIAS.n39" 0 0 619 -146 0
 rnode "NBIAS.n40" 0 0 576 -145 0
-rnode "NBIAS.t2" 0 0 561 -118 0
+rnode "NBIAS.t1" 0 0 561 -118 0
 rnode "NBIAS.n41" 0 0 568 -127 0
 rnode "NBIAS.n42" 0 0 619 -182 0
 rnode "NBIAS.n43" 0 0 619 -182 0
@@ -234,9 +234,9 @@ resist "NBIAS.n13" "NBIAS.n12" 1.92384
 resist "NBIAS.n48" "NBIAS.n47" 1.92384
 resist "NBIAS.n51" "NBIAS.n50" 1.948
 resist "NBIAS.n58" "NBIAS.n57" 2.25
-resist "NBIAS.n41" "NBIAS.t2" 4.2
+resist "NBIAS.n41" "NBIAS.t1" 4.2
 resist "NBIAS.n55" "NBIAS.n54" 4.5
-resist "NBIAS.n4" "NBIAS.t0" 4.746
+resist "NBIAS.n4" "NBIAS.t2" 4.746
 resist "NBIAS.n45" "NBIAS.n41" 4.8
 resist "NBIAS.n6" "NBIAS.n5" 9.13089
 resist "NBIAS.n12" "NBIAS.n11" 13.6527
@@ -255,7 +255,7 @@ resist "NBIAS.n24" "NBIAS.n23" 141.525
 resist "NBIAS.n23" "NBIAS.n22" 141.525
 resist "NBIAS.n22" "NBIAS.n21" 141.525
 resist "NBIAS.n21" "NBIAS.n20" 141.525
-resist "NBIAS.n35" "NBIAS.t1" 241
+resist "NBIAS.n35" "NBIAS.t0" 241
 resist "NBIAS.n36" "NBIAS.n35" 261.54
 resist "NBIAS.n35" "NBIAS.n34" 327.898
 resist "NBIAS.n34" "NBIAS.t7" 718.18
@@ -297,12 +297,12 @@ resist "VPWR.n3" "VPWR.t0" 5.086
 resist "VPWR.n5" "VPWR.n4" 6.95283
 resist "VPWR.n6" "VPWR.n5" 50.6667
 resist "VPWR.n6" "VPWR.n0" 50.8677
-rnode "PBIAS.t15" 0 164.911 -315 -316 0
-rnode "PBIAS.t3" 0 340.66 -282 -316 0
+rnode "PBIAS.t7" 0 164.911 -315 -316 0
+rnode "PBIAS.t13" 0 340.66 -282 -316 0
 rnode "PBIAS.n0" 0 761.978 -299 -318 0
 rnode "PBIAS.n1" 0 61.1762 -184 -553 0
-rnode "PBIAS.t0" 0 154.317 -211 -316 0
-rnode "PBIAS.t14" 0 332.592 -180 -316 0
+rnode "PBIAS.t4" 0 154.317 -211 -316 0
+rnode "PBIAS.t5" 0 332.592 -180 -316 0
 rnode "PBIAS.n2" 0 728.009 -196 -318 0
 rnode "PBIAS.n3" 0 144.643 -187 -553 0
 rnode "PBIAS.n4" 0 208.797 -195 -552 0
@@ -326,37 +326,37 @@ rnode "PBIAS.n21" 0 7.29562 314 -553 0
 rnode "PBIAS.n22" 0 7.29562 315 -551 0
 rnode "PBIAS.n23" 0 51.4192 325 -553 0
 rnode "PBIAS.n24" 0 52.6676 406 -552 0
-rnode "PBIAS.t2" 0 154.335 401 -316 0
-rnode "PBIAS.t17" 0 332.989 432 -316 0
+rnode "PBIAS.t0" 0 154.335 401 -316 0
+rnode "PBIAS.t15" 0 332.989 432 -316 0
 rnode "PBIAS.n25" 0 729.644 416 -318 0
 rnode "PBIAS.n26" 0 87.754 425 -552 0
-rnode "PBIAS.t16" 0 144.047 299 -316 0
-rnode "PBIAS.t1" 0 341.014 330 -316 0
+rnode "PBIAS.t8" 0 144.047 299 -316 0
+rnode "PBIAS.t2" 0 341.014 330 -316 0
 rnode "PBIAS.n27" 0 688.112 313 -318 0
 rnode "PBIAS.n28" 0 116.616 322 -553 0
-rnode "PBIAS.t4" 0 144.047 197 -316 0
+rnode "PBIAS.t12" 0 144.047 197 -316 0
 rnode "PBIAS.t11" 0 341.014 228 -316 0
 rnode "PBIAS.n29" 0 688.112 211 -318 0
 rnode "PBIAS.n30" 0 116.616 220 -553 0
 rnode "PBIAS.n31" 0 61.5432 -105 -553 0
 rnode "PBIAS.n32" 0 12.9746 -94 -563 0
-rnode "PBIAS.t12" 0 144.047 -109 -316 0
-rnode "PBIAS.t6" 0 341.014 -78 -316 0
+rnode "PBIAS.t10" 0 144.047 -109 -316 0
+rnode "PBIAS.t14" 0 341.014 -78 -316 0
 rnode "PBIAS.n33" 0 731.598 -95 -318 0
 rnode "PBIAS.n34" 0 75.161 -86 -553 0
 rnode "PBIAS.n35" 0 62.8844 -83 -553 0
 rnode "PBIAS.n36" 0 62.22 -2 -553 0
 rnode "PBIAS.n37" 0 7.50288 8 -551 0
 rnode "PBIAS.n38" 0 6.13495 9 -553 0
-rnode "PBIAS.t5" 0 153.432 -7 -316 0
-rnode "PBIAS.t13" 0 331.488 24 -316 0
+rnode "PBIAS.t1" 0 153.432 -7 -316 0
+rnode "PBIAS.t9" 0 331.488 24 -316 0
 rnode "PBIAS.n39" 0 709.034 8 -318 0
 rnode "PBIAS.n40" 0 71.5669 17 -553 0
 rnode "PBIAS.n41" 0 62.2818 19 -553 0
 rnode "PBIAS.n42" 0 62.8832 100 -553 0
 rnode "PBIAS.n43" 0 12.9746 111 -551 0
-rnode "PBIAS.t9" 0 153.432 95 -316 0
-rnode "PBIAS.t10" 0 331.488 126 -316 0
+rnode "PBIAS.t6" 0 153.432 95 -316 0
+rnode "PBIAS.t3" 0 331.488 126 -316 0
 rnode "PBIAS.n44" 0 709.034 110 -318 0
 rnode "PBIAS.n45" 0 72.2908 119 -553 0
 rnode "PBIAS.n46" 0 62.2211 122 -553 0
@@ -374,10 +374,10 @@ rnode "PBIAS.n57" 0 62.8832 406 -552 0
 rnode "PBIAS.n58" 0 12.9746 417 -551 0
 rnode "PBIAS.n59" 0 15.0058 417 -551 0
 rnode "PBIAS.n60" 0 124.837 428 -552 0
-rnode "PBIAS.t7" 0 350.687 693 -309 0
+rnode "PBIAS.t16" 0 350.687 693 -309 0
 rnode "PBIAS.t18" 0 378.172 745 -309 0
 rnode "PBIAS.n61" 0 351.895 693 -599 0
-rnode "PBIAS.t8" 0 988.354 683 -309 0
+rnode "PBIAS.t17" 0 988.354 683 -309 0
 rnode "PBIAS.n62" 0 887.289 620 -477 0
 rnode "PBIAS.n63" 0 531.861 647 -549 0
 rnode "PBIAS" 0 150.191 916 -567 0
@@ -433,22 +433,22 @@ resist "PBIAS.n5" "PBIAS.n4" 0.480961
 resist "PBIAS.n63" "PBIAS.n60" 1.02141
 resist "PBIAS.n59" "PBIAS.n58" 1.125
 resist "PBIAS" "PBIAS.n63" 1.25811
-resist "PBIAS.n33" "PBIAS.t12" 1.97944
-resist "PBIAS.n29" "PBIAS.t4" 1.97944
-resist "PBIAS.n27" "PBIAS.t16" 1.97944
-resist "PBIAS.n39" "PBIAS.t5" 2.16474
-resist "PBIAS.n44" "PBIAS.t9" 2.16474
-resist "PBIAS.n2" "PBIAS.t0" 2.18044
-resist "PBIAS.n25" "PBIAS.t2" 2.18061
-resist "PBIAS.n0" "PBIAS.t15" 2.38075
-resist "PBIAS.n25" "PBIAS.t17" 3.97836
-resist "PBIAS.n2" "PBIAS.t14" 3.97855
-resist "PBIAS.n39" "PBIAS.t13" 3.99592
-resist "PBIAS.n44" "PBIAS.t10" 3.99592
-resist "PBIAS.n0" "PBIAS.t3" 4.17928
-resist "PBIAS.n33" "PBIAS.t6" 4.17955
+resist "PBIAS.n33" "PBIAS.t10" 1.97944
+resist "PBIAS.n29" "PBIAS.t12" 1.97944
+resist "PBIAS.n27" "PBIAS.t8" 1.97944
+resist "PBIAS.n39" "PBIAS.t1" 2.16474
+resist "PBIAS.n44" "PBIAS.t6" 2.16474
+resist "PBIAS.n2" "PBIAS.t4" 2.18044
+resist "PBIAS.n25" "PBIAS.t0" 2.18061
+resist "PBIAS.n0" "PBIAS.t7" 2.38075
+resist "PBIAS.n25" "PBIAS.t15" 3.97836
+resist "PBIAS.n2" "PBIAS.t5" 3.97855
+resist "PBIAS.n39" "PBIAS.t9" 3.99592
+resist "PBIAS.n44" "PBIAS.t3" 3.99592
+resist "PBIAS.n0" "PBIAS.t13" 4.17928
+resist "PBIAS.n33" "PBIAS.t14" 4.17955
 resist "PBIAS.n29" "PBIAS.t11" 4.17955
-resist "PBIAS.n27" "PBIAS.t1" 4.17955
+resist "PBIAS.n27" "PBIAS.t2" 4.17955
 resist "PBIAS.n53" "PBIAS.n28" 4.37061
 resist "PBIAS.n48" "PBIAS.n30" 4.37061
 resist "PBIAS.n30" "PBIAS.n29" 7.14421
@@ -460,26 +460,26 @@ resist "PBIAS.n45" "PBIAS.n44" 11.5563
 resist "PBIAS.n40" "PBIAS.n39" 11.5563
 resist "PBIAS.n4" "PBIAS.n0" 11.5858
 resist "PBIAS.n63" "PBIAS.n62" 17.8445
-resist "PBIAS.n62" "PBIAS.t8" 50.071
+resist "PBIAS.n62" "PBIAS.t17" 50.071
 resist "PBIAS.n62" "PBIAS.n61" 334.255
-resist "PBIAS.n61" "PBIAS.t7" 698.9
+resist "PBIAS.n61" "PBIAS.t16" 698.9
 resist "PBIAS.n61" "PBIAS.t18" 861.242
-device msubckt sky130_fd_pr__nfet_01v8 330 -614 331 -613  "VGND" "NBIAS.t18" 40 0 "PBIAS.t1" 596 0 "a_n454_n612.t0" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 75 -614 76 -613  "VGND" "NBIAS.t17" 40 0 "a_n454_n612.t1" 596 0 "PBIAS.t9" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -180 -614 -179 -613  "VGND" "NBIAS.t16" 40 0 "PBIAS.t14" 596 0 "a_n454_n612.t2" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -335 -614 -334 -613  "VGND" "NBIAS.t15" 40 0 "a_n454_n612.t3" 596 0 "PBIAS.t15" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 279 -614 280 -613  "VGND" "NBIAS.t14" 40 0 "a_n454_n612.t4" 596 0 "PBIAS.t16" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 24 -614 25 -613  "VGND" "NBIAS.t13" 40 0 "PBIAS.t13" 596 0 "a_n454_n612.t5" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -129 -614 -128 -613  "VGND" "NBIAS.t12" 40 0 "a_n454_n612.t6" 596 0 "PBIAS.t12" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 541 -218 542 -217  "VGND" "NBIAS.t1" 40 0 "VGND.t0" 200 0 "NBIAS.t2" 200 0
+device msubckt sky130_fd_pr__nfet_01v8 330 -614 331 -613  "VGND" "NBIAS.t18" 40 0 "PBIAS.t2" 596 0 "a_n454_n612.t0" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 75 -614 76 -613  "VGND" "NBIAS.t17" 40 0 "a_n454_n612.t1" 596 0 "PBIAS.t6" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -180 -614 -179 -613  "VGND" "NBIAS.t16" 40 0 "PBIAS.t5" 596 0 "a_n454_n612.t2" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -335 -614 -334 -613  "VGND" "NBIAS.t15" 40 0 "a_n454_n612.t3" 596 0 "PBIAS.t7" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 279 -614 280 -613  "VGND" "NBIAS.t14" 40 0 "a_n454_n612.t4" 596 0 "PBIAS.t8" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 24 -614 25 -613  "VGND" "NBIAS.t13" 40 0 "PBIAS.t9" 596 0 "a_n454_n612.t5" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -129 -614 -128 -613  "VGND" "NBIAS.t12" 40 0 "a_n454_n612.t6" 596 0 "PBIAS.t10" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 541 -218 542 -217  "VGND" "NBIAS.t0" 40 0 "VGND.t0" 200 0 "NBIAS.t1" 200 0
 device msubckt sky130_fd_pr__nfet_01v8 228 -614 229 -613  "VGND" "NBIAS.t11" 40 0 "PBIAS.t11" 596 0 "a_n454_n612.t7" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 177 -614 178 -613  "VGND" "NBIAS.t10" 40 0 "a_n454_n612.t8" 596 0 "PBIAS.t4" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -78 -614 -77 -613  "VGND" "NBIAS.t9" 40 0 "PBIAS.t6" 596 0 "a_n454_n612.t9" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -282 -614 -281 -613  "VGND" "NBIAS.t8" 40 0 "PBIAS.t3" 596 0 "a_n454_n612.t10" 596 0
-device msubckt sky130_fd_pr__pfet_01v8 683 -599 684 -598  "VPWR" "PBIAS.t7" 40 0 "PBIAS.t8" 581 0 "VPWR.t0" 581 0
-device msubckt sky130_fd_pr__nfet_01v8 432 -614 433 -613  "VGND" "NBIAS.t7" 40 0 "PBIAS.t17" 596 0 "a_n454_n612.t11" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 381 -614 382 -613  "VGND" "NBIAS.t6" 40 0 "a_n454_n612.t12" 596 0 "PBIAS.t2" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 126 -614 127 -613  "VGND" "NBIAS.t5" 40 0 "PBIAS.t10" 596 0 "a_n454_n612.t13" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -27 -614 -26 -613  "VGND" "NBIAS.t4" 40 0 "a_n454_n612.t14" 596 0 "PBIAS.t5" 596 0
-device msubckt sky130_fd_pr__nfet_01v8 -231 -614 -230 -613  "VGND" "NBIAS.t3" 40 0 "a_n454_n612.t15" 596 0 "PBIAS.t0" 596 0
-device msubckt sky130_fd_pr__pfet_01v8 735 -599 736 -598  "VPWR" "PBIAS.t18" 40 0 "VPWR.t1" 581 0 "NBIAS.t0" 581 0
+device msubckt sky130_fd_pr__nfet_01v8 177 -614 178 -613  "VGND" "NBIAS.t10" 40 0 "a_n454_n612.t8" 596 0 "PBIAS.t12" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -78 -614 -77 -613  "VGND" "NBIAS.t9" 40 0 "PBIAS.t14" 596 0 "a_n454_n612.t9" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -282 -614 -281 -613  "VGND" "NBIAS.t8" 40 0 "PBIAS.t13" 596 0 "a_n454_n612.t10" 596 0
+device msubckt sky130_fd_pr__pfet_01v8 683 -599 684 -598  "VPWR" "PBIAS.t16" 40 0 "PBIAS.t17" 581 0 "VPWR.t0" 581 0
+device msubckt sky130_fd_pr__nfet_01v8 432 -614 433 -613  "VGND" "NBIAS.t7" 40 0 "PBIAS.t15" 596 0 "a_n454_n612.t11" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 381 -614 382 -613  "VGND" "NBIAS.t6" 40 0 "a_n454_n612.t12" 596 0 "PBIAS.t0" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 126 -614 127 -613  "VGND" "NBIAS.t5" 40 0 "PBIAS.t3" 596 0 "a_n454_n612.t13" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -27 -614 -26 -613  "VGND" "NBIAS.t4" 40 0 "a_n454_n612.t14" 596 0 "PBIAS.t1" 596 0
+device msubckt sky130_fd_pr__nfet_01v8 -231 -614 -230 -613  "VGND" "NBIAS.t3" 40 0 "a_n454_n612.t15" 596 0 "PBIAS.t4" 596 0
+device msubckt sky130_fd_pr__pfet_01v8 735 -599 736 -598  "VPWR" "PBIAS.t18" 40 0 "VPWR.t1" 581 0 "NBIAS.t2" 581 0

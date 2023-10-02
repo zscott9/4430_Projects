@@ -24,5 +24,5 @@ X15 PBIAS NBIAS a_n454_n612# VGND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=
 X16 a_n454_n612# NBIAS PBIAS VGND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=596 l=20
 X17 PBIAS NBIAS a_n454_n612# VGND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=596 l=20
 X18 a_n454_n612# NBIAS PBIAS VGND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=596 l=20
-C0 a_n454_n612# PBIAS 15.95fF
+C0 PBIAS a_n454_n612# 15.95fF
 .ends

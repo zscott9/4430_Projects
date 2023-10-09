@@ -1,23 +1,23 @@
+** sch_path: /home/bard/4430_Projects/project2/sky130_hilas_Bootstrap01.sch
 **.subckt sky130_hilas_Bootstrap01 VPWR NBIAS PBIAS VGND RESIST
 *.iopin VPWR
 *.iopin NBIAS
 *.iopin PBIAS
 *.iopin VGND
 *.iopin RESIST
-XM4 NBIAS NBIAS VGND __UNCONNECTED_PIN__0 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
+XM4 NBIAS NBIAS VGND VGND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
 XM7 NBIAS PBIAS VPWR VPWR sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
++ sa=0 sb=0 sd=0 mult=1 m=1
 XM10 PBIAS NBIAS net1 VGND sky130_fd_pr__nfet_01v8 L=0.15 W=50 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 XM5 PBIAS PBIAS VPWR VPWR sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XR1 RESIST net1 sky130_fd_pr__res_generic_po W=1 L=30 mult=1 m=1
++ sa=0 sb=0 sd=0 mult=1 m=1
+R1 RESIST net1 sky130_fd_pr__res_generic_po W=1 L=30 m=1
 **.ends
 .GLOBAL VGND
-** flattened .save nodes
 .end

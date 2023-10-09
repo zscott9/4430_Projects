@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -29,12 +30,13 @@ N 1260 -770 1310 -770 { lab=PBIAS}
 N 1450 -570 1490 -570 { lab=VGND}
 N 1450 -650 1450 -570 { lab=VGND}
 N 1310 -650 1310 -640 { lab=#net1}
-N 1280 -570 1310 -570 { lab=RESIST}
-N 1310 -580 1310 -570 { lab=RESIST}
+N 1280 -570 1310 -570 { lab=RESISTTERM}
+N 1310 -580 1310 -570 { lab=RESISTTERM}
+N 1450 -700 1460 -700 {}
 C {devices/iopin.sym} 1550 -830 0 0 {name=VPWR lab=VPWR}
 C {sky130_fd_pr/nfet_01v8.sym} 1430 -700 0 0 {name=M4
-L=20
-W=596
+L=0.15
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -49,8 +51,8 @@ spiceprefix=X
 C {devices/gnd.sym} 1480 -700 0 0 {name=l2 lab=VGND}
 C {devices/iopin.sym} 1500 -750 0 0 {name=NBIAS lab=NBIAS}
 C {sky130_fd_pr/pfet_01v8.sym} 1430 -800 0 0 {name=M7
-L=20
-W=581
+L=0.15
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -63,8 +65,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 1330 -700 0 1 {name=M10
-L=20
-W=596
+L=0.15
+W=50
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -80,8 +82,8 @@ C {devices/iopin.sym} 1260 -770 0 1 {name=PBIAS lab=PBIAS}
 C {devices/iopin.sym} 1490 -570 0 0 {name=p1 lab=VGND}
 C {devices/gnd.sym} 1250 -700 0 0 {name=l3 lab=VGND}
 C {sky130_fd_pr/pfet_01v8.sym} 1330 -800 0 1 {name=M5
-L=20
-W=581
+L=0.15
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -94,9 +96,8 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/res_generic_po.sym} 1310 -610 0 0 {name=R1
-value=0.034
-W=42
-L=507
+W=1
+L=30
 model=res_generic_po
 spiceprefix=X
 mult=1}

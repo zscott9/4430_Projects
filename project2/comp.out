@@ -1,0 +1,44 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Class magic.spice (0):  Merged 15 parallel devices.
+Class magic.spice (0):  Merged 1 series devices.
+Subcircuit summary:
+Circuit 1: magic.spice                     |Circuit 2: xschem.spice                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8 (2)                |sky130_fd_pr__pfet_01v8 (2)                
+sky130_fd_pr__nfet_01v8 (17->2)            |sky130_fd_pr__nfet_01v8 (2)                
+sky130_fd_pr__res_generic_po (2->1)        |sky130_fd_pr__res_generic_po (1)           
+Number of devices: 5                       |Number of devices: 5                       
+Number of nets: 6                          |Number of nets: 6                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely with property errors.
+sky130_fd_pr__res_generic_po:0 vs. sky130_fd_pr__res_generic_po:1:
+ l circuit1: 10.14   circuit2: 30   (delta=99%, cutoff=1%)
+ w circuit1: 0.42   circuit2: 1   (delta=81.7%, cutoff=1%)
+sky130_fd_pr__nfet_01v8:11 vs. sky130_fd_pr__nfet_01v8:M4:
+ l circuit1: 0.2   circuit2: 0.15   (delta=28.6%, cutoff=1%)
+ w circuit1: 2   circuit2: 1   (delta=66.7%, cutoff=1%)
+sky130_fd_pr__nfet_01v8:1 vs. sky130_fd_pr__nfet_01v8:M10:
+ l circuit1: 0.2   circuit2: 0.15   (delta=28.6%, cutoff=1%)
+ w circuit1: 95.36   circuit2: 50   (delta=62.4%, cutoff=1%)
+sky130_fd_pr__pfet_01v8:6 vs. sky130_fd_pr__pfet_01v8:M5:
+ l circuit1: 0.2   circuit2: 0.15   (delta=28.6%, cutoff=1%)
+ w circuit1: 5.81   circuit2: 1   (delta=141%, cutoff=1%)
+sky130_fd_pr__pfet_01v8:0 vs. sky130_fd_pr__pfet_01v8:M7:
+ l circuit1: 0.2   circuit2: 0.15   (delta=28.6%, cutoff=1%)
+ w circuit1: 5.81   circuit2: 1   (delta=141%, cutoff=1%)
+Cells have no pins;  pin matching not needed.
+Device classes magic.spice and xschem.spice are equivalent.
+
+Final result: Circuits match uniquely.
+Property errors were found.
+
+The following cells had property errors:
+ magic.spice

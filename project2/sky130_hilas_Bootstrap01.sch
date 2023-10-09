@@ -34,22 +34,6 @@ N 1280 -570 1310 -570 { lab=RESIST}
 N 1310 -580 1310 -570 { lab=RESIST}
 N 1450 -700 1460 -700 {
 lab=VGND}
-N 1070 -680 1070 -650 {
-lab=#net2}
-N 1070 -590 1070 -560 {
-lab=VGND}
-N 1070 -780 1070 -760 {
-lab=RESIST}
-N 1070 -700 1070 -680 {
-lab=#net2}
-N 970 -690 970 -650 {
-lab=VPWR}
-N 970 -590 970 -560 {
-lab=VGND}
-N 870 -580 870 -560 {
-lab=GND}
-N 870 -660 870 -640 {
-lab=VGND}
 C {devices/iopin.sym} 1550 -830 0 0 {name=VPWR lab=VPWR}
 C {sky130_fd_pr/nfet_01v8.sym} 1430 -700 0 0 {name=M4
 L=0.2
@@ -119,26 +103,3 @@ model=res_generic_po
 spiceprefix=X
 mult=1}
 C {devices/iopin.sym} 1280 -570 0 1 {name=RESIST lab=RESIST}
-C {devices/vsource.sym} 1070 -620 0 0 {name=V1 value=0 savecurrent=false}
-C {devices/iopin.sym} 1070 -780 0 0 {name=p2 lab=RESIST}
-C {devices/gnd.sym} 1070 -560 0 0 {name=l1 lab=VGND}
-C {devices/code_shown.sym} 840 -980 0 0 {name=s1 only_toplevel=false value="
-.control
-  dc v2 0 1.8 0.1
-  print i(v1)
-  print v(NBIAS)
-  print v(PBIAS)
-.endc
-"}
-C {sky130_fd_pr/corner.sym} 1040 -1000 0 0 {name=CORNER only_toplevel=false corner=tt}
-C {devices/vsource.sym} 970 -620 0 0 {name=V2 value=1.8 savecurrent=false}
-C {devices/iopin.sym} 970 -690 0 0 {name=p3 lab=VPWR}
-C {devices/gnd.sym} 970 -560 0 0 {name=l4 lab=VGND}
-C {devices/gnd.sym} 870 -560 0 0 {name=l5 lab=GND}
-C {devices/vsource.sym} 870 -610 0 0 {name=V3 value=0 savecurrent=false}
-C {devices/iopin.sym} 870 -660 0 0 {name=p4 lab=VGND}
-C {devices/res.sym} 1070 -730 0 0 {name=R2
-value=100k
-footprint=1206
-device=resistor
-m=1}

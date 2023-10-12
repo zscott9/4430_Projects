@@ -1,0 +1,15 @@
+.include sf.spice
+.include bootstrap.spice
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt 
+X1 vdd gnd nbias vout vin source_follower
+X2 RESIST vdd gnd PBIAS nbias sky130_hilas_Bootstrap01
+v1 vdd gnd 1.8
+v2 vin gnd PULSE(0 3 0 2n 2n 50n 100n)
+r1 resist gnd 7.5meg
+c1 vout gnd 100f
+.control
+    set filetype=ascii
+    tran 1n 1000n
+    plot v(vout)
+    write sf_data.txt v(vout)
+.endc

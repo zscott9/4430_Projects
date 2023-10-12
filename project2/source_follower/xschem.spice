@@ -1,0 +1,16 @@
+** sch_path: /home/bard/4430_Projects/project2/source_follower/source_follower.sch
+**.subckt source_follower VIN VTAU VOUT VDD VGND
+*.iopin VIN
+*.iopin VTAU
+*.iopin VOUT
+*.iopin VDD
+*.iopin VGND
+XM1 VDD VIN VOUT VGND sky130_fd_pr__nfet_01v8 L=0.4 W=0.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 VOUT VTAU VGND VGND sky130_fd_pr__nfet_01v8 L=0.4 W=0.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.GLOBAL VGND
+.end

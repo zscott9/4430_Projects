@@ -1,6 +1,6 @@
 * NGSPICE file created from sky130_hilas_Bootstrap01.ext - technology: sky130A
 
-**.subckt sky130_hilas_Bootstrap01 RESIST VPWR VGND PBIAS NBIAS
+.subckt sky130_hilas_Bootstrap01 RESIST VPWR VGND PBIAS NBIAS
 X0 NBIAS PBIAS VPWR VPWR sky130_fd_pr__pfet_01v8 ad=1.68 pd=12.2 as=0.93 ps=6.13 w=5.81 l=0.2
 X1 PBIAS NBIAS a_n454_n612# VGND sky130_fd_pr__nfet_01v8 ad=0.924 pd=6.27 as=0.924 ps=6.27 w=5.96 l=0.2
 X2 PBIAS NBIAS a_n454_n612# VGND sky130_fd_pr__nfet_01v8 ad=0.924 pd=6.27 as=0.924 ps=6.27 w=5.96 l=0.2

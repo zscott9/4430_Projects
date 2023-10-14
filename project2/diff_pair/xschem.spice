@@ -1,0 +1,20 @@
+** sch_path: /media/sf_hilas_shared/4430_Projects/project2/diff_pair/diff_pair.sch
+**.subckt diff_pair VTAU VIN1 VIN2 VGND VDD VDD
+*.iopin VTAU
+*.iopin VIN1
+*.iopin VIN2
+*.iopin VGND
+*.iopin VDD
+*.iopin VDD
+XM1 net1 VTAU VGND VGND sky130_fd_pr__nfet_01v8 L=0.4 W=0.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 VDD VIN2 net1 VGND sky130_fd_pr__nfet_01v8 L=0.4 W=0.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 VDD VIN1 net1 VGND sky130_fd_pr__nfet_01v8 L=0.4 W=0.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.GLOBAL VGND
+.end

@@ -1,17 +1,17 @@
 * pFET model
 .subckt sky130_fd_pr__pfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=100e-9 w=100e-9
     * nFET Spice Model
-    .model hPMOS PMOS(Level=12 KP=1e-4 Vto=-0.92 Is=1e-15 Gamma=0.6213 Phi=0.3787)
+    .model hPMOS PMOS(Level=12 KP=1e-4 Vto=-0.9 Is=18.7f Gamma=0.6213 Phi=0.3787 Lambda = 0.0225)
     M1 DRAIN GATE SOURCE BODY hPMOS As={as*1e-6} Ad={ad*1e-6} Ps={ps*1e-6} Pd={pd*1e-6} L={l*1e-6} W={w*1e-6}
     C1 GATE DRAIN {w*0.1*1e-15}
     C2 GATE SOURCE {2*w*l*10.4*1e-15/3+w*0.1*1e-15}
-    C3 DRAIN BODY {0.034*pd*1e-15+0.8*ad*1e-15}
-    C4 SOURCE BODY {0.034*ps*1e-15+0.8*as*1e-15}
+    C3 DRAIN BODY {0.047*pd*1e-15+1.05*ad*1e-15}
+    C4 SOURCE BODY {0.047*ps*1e-15+1.05*as*1e-15}
 .ends
 * nFET model
 .subckt sky130_fd_pr__nfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=100e-9 w=100e-9
     * nFET Spice Model
-    .model hNMOS NMOS(Level=12 KP=.00029 Vto=0.58 Is=1.84e-14 Gamma=0.4 Phi=0.6)
+    .model hNMOS NMOS(Level=12 KP=.00029 Vto=0.58 Is=79.7f Gamma=0.4 Phi=0.6 Lambda = 0.2537)
     M1 DRAIN GATE SOURCE BODY hNMOS As={as*1e-6} Ad={ad*1e-6} Ps={ps*1e-6} Pd={pd*1e-6} L={l*1e-6} W={w*1e-6}
     C1 GATE DRAIN {w*0.1*1e-15}
     C2 GATE SOURCE {2*w*l*10.4*1e-15/3+w*0.1*1e-15}

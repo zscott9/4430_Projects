@@ -11,7 +11,7 @@
 * nFET model
 .subckt sky130_fd_pr__nfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=0.1 w=0.1
     * nFET Spice Model
-    .model hNMOS NMOS(Level=12 KP=.0021 Vto=0.5 Is=6.42e-14 Gamma=0.3 Phi=0.25 Lambda = 0.2537)
+    .model hNMOS NMOS(Level=12 KP=.0021 Vto=0.6 Is=6.42e-14 Gamma=0.3 Phi=0.25 Lambda = 0.2537)
     M1 DRAIN GATE SOURCE BODY hNMOS As={as*1e-6} Ad={ad*1e-6} Ps={ps*1e-6} Pd={pd*1e-6} L={l*1e-6} W={w*1e-6}
     C1 GATE DRAIN {w*0.1*1e-15}
     C2 GATE SOURCE {2*w*l*10.4*1e-15/3+w*0.1*1e-15}

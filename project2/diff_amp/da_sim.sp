@@ -18,9 +18,9 @@ r1 resist gnd 260k
 c1 vout gnd 250f
 * Sources
 v1 vdd gnd 1.8
-v2 vin1 gnd PULSE(0 5 0 0 0 0.5e-3 1e-3)
+v2 vin1 gnd PULSE(0 0.1 0 0 0 0.5 1)
 *v2 vin1 gnd 0.3
 v3 vin2 vout 0
 * SIMS
 *.dc v2 0 2 0.001
-.tran 0.1e-3 15e-3 10e-3
+.tran 0.1e-3 15 10

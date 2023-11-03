@@ -34,7 +34,7 @@ X16 nsc nsc gnd gnd sky130_fd_pr__nfet_01v8 w=12 l=2
 X17 ncasc pbias vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
 * Discrete
 R1 resist gnd 1k
-C1 n79 gnd 0.3p
+C1 n79 gnd 0.4p
 * Sources
 V1 vin1 gnd 0.1 ac=1
 V2 vin2 gnd 0.1

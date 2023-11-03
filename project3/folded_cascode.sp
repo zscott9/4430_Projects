@@ -9,9 +9,9 @@ X2 n14 vin1 nint vdd sky130_fd_pr__pfet_01v8 w=4.0 l=2.0
 * Diff in -
 X3 n23 vin2 nint vdd sky130_fd_pr__pfet_01v8 w=4.0 l=2.0
 * Bias Trans 1
-X4 n14 nbias gnd gnd sky130_fd_pr__nfet_01v8 w=16.0 l=2.0
+X4 n14 nbias gnd gnd sky130_fd_pr__nfet_01v8 w=12 l=2.0
 * Bias Trans 2
-X5 n23 nbias gnd gnd sky130_fd_pr__nfet_01v8 w=16.0 l=2.0
+X5 n23 nbias gnd gnd sky130_fd_pr__nfet_01v8 w=12 l=2.0
 * B1 nFET1
 X6 n810 ncasc n14 gnd sky130_fd_pr__nfet_01v8 w=4.0 l=2.0
 * B1 pFET1
@@ -31,7 +31,7 @@ X13 pcasc v23 gnd vdd sky130_fd_pr__pfet_01v8 w=3.2 l=0.4
 X14 vdd nbias ncasc vdd sky130_fd_pr__pfet_01v8 w=2.0 l=0.4
 X15 ncasc v23 gnd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
 * Discrete
-R1 resist gnd 10k
+R1 resist gnd 1k
 C1 n79 gnd 0.3p
 * Sources
 V1 vin1 gnd 0.7 ac=1

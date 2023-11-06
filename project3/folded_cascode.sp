@@ -36,11 +36,14 @@ X17 ncasc pbias vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
 R1 resist gnd 1k
 C1 n79 gnd 0.4p
 * Sources
-V1 vin1 gnd 0.1 ac=1
-V2 vin2 gnd 0.1
+V1 vin1 vnoise 0.9 ac=1
+V2 vin2 gnd 0.9
 V3 vdd gnd 1.8
+* Make zero if not doing noise simulation
+V4 vnoise gnd 1
 
 
 * Sim
 *.dc v1 0 1.8 0.05
-.ac dec 100 1 1e9
+*.ac dec 100 1 1e9
+.noise V(n79) V4 dec 100 1 100meg

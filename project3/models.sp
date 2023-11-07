@@ -64,3 +64,24 @@ X16 VGND V78 VCPTEMP VDD sky130_fd_pr__pfet_01v8 ad=0.32 pd=2.4 as=0.2 ps=1.3 w=
 X17 VCNACT VCNTEMP VDD VGND sky130_fd_pr__nfet_01v8 ad=0.26 pd=1.9 as=0.7 ps=3.8 w=1.4 l=0.4
 X18 V910 V78 VDD VDD sky130_fd_pr__pfet_01v8 ad=0.198 pd=1.3 as=0.2 ps=1.3 w=0.8 l=0.4
 .ends
+
+* Folded Cascode Subcircuit Definition
+.subckt fc vin1 vin2 pbias vdd gnd nbias vout
+X0 n14 vin1 nint vdd sky130_fd_pr__pfet_01v8 ad=7.2 pd=36.8 as=5.66 ps=36.8 w=18 l=1
+X1 vdd n810 n57 vdd sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=0.6 ps=3.4 w=3 l=2
+X2 vdd psc psc vdd sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=0.6 ps=3.4 w=3 l=2
+X3 pcasc nbias gnd gnd sky130_fd_pr__nfet_01v8 ad=0.32 pd=2.4 as=0.32 ps=2.4 w=0.8 l=0.4
+X4 n14 nbias gnd gnd sky130_fd_pr__nfet_01v8 ad=1.05 pd=6.4 as=2.4 ps=12.8 w=6 l=2
+X5 vdd pbias nint vdd sky130_fd_pr__pfet_01v8 ad=2.1 pd=12.8 as=4.86 ps=19 w=6 l=0.4
+X6 n810 ncasc n14 gnd sky130_fd_pr__nfet_01v8 ad=1.2 pd=6.8 as=1.05 ps=6.4 w=3 l=2
+X7 nint vin2 n23 vdd sky130_fd_pr__pfet_01v8 ad=4.86 pd=19 as=9 ps=37 w=18 l=1
+X8 n68 pcasc n810 vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 l=2
+X9 vdd pbias ncasc vdd sky130_fd_pr__pfet_01v8 ad=0.32 pd=2.4 as=0.32 ps=2.4 w=0.8 l=0.4
+X10 vdd n810 n68 vdd sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=0.6 ps=3.4 w=3 l=2
+X11 ncasc ncasc nsc gnd sky130_fd_pr__nfet_01v8 ad=1.2 pd=6.8 as=0.75 ps=3.5 w=3 l=2
+X12 n23 nbias gnd gnd sky130_fd_pr__nfet_01v8 ad=1.05 pd=6.4 as=2.4 ps=12.8 w=6 l=2
+X13 vout ncasc n23 gnd sky130_fd_pr__nfet_01v8 ad=1.2 pd=6.8 as=1.05 ps=6.4 w=3 l=2
+X14 nsc nsc gnd gnd sky130_fd_pr__nfet_01v8 ad=0.75 pd=3.5 as=1.2 ps=6.8 w=3 l=2
+X15 n57 pcasc vout vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 l=2
+X16 psc pcasc pcasc vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 l=2
+.ends

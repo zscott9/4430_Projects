@@ -1,4 +1,4 @@
-timestamp 1699373573
+timestamp 1699375158
 version 8.3
 tech sky130A
 style ngspice()
@@ -10,10 +10,11 @@ port "nbias" 6 5760 40 5780 70 m3
 port "vin2" 2 -40 220 10 240 m1
 port "pbias" 3 -30 350 20 360 m1
 port "vin1" 1 -40 420 20 440 m1
+port "vout" 7 5750 540 5780 590 m3
 port "vdd" 4 -40 610 -10 650 m2
 port "gnd" 5 -40 0 -10 40 m2
 node "pcasc" 2270 1404.26 3640 100 p 0 0 0 0 0 0 0 0 3200 240 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 264000 3040 0 0 45300 1920 0 0 0 0 0 0 0 0 0 0 0 0
-node "nbias" 549 5874.29 5760 40 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 300000 3800 0 0 20000 760 12000 580 13600 640 111900 6860 0 0 0 0 0 0
+node "nbias" 549 5781.97 5760 40 m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 300000 3800 0 0 20000 760 12000 580 13600 640 111900 6860 0 0 0 0 0 0
 node "vin2" 947 649.306 -40 220 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 191000 4020 0 0 5000 300 6500 360 0 0 0 0 0 0 0 0 0 0
 node "nsc" 951 1358.83 5250 100 p 0 0 0 0 0 0 0 0 15000 700 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 86000 1260 0 0 30800 1220 0 0 0 0 0 0 0 0 0 0 0 0
 node "n57" 1478 0 4160 300 pdif 0 0 0 0 0 0 0 0 0 0 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -21,95 +22,97 @@ node "n68" 1478 0 3670 300 pdif 0 0 0 0 0 0 0 0 0 0 12000 680 0 0 0 0 0 0 0 0 0 
 node "n23" 9878 1307.11 40 60 pdif 0 0 0 0 0 0 0 0 21000 1280 90000 3700 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 122400 5240 0 0 0 0 0 0 0 0 0 0 0 0
 node "psc" 1721 304.937 4560 340 p 0 0 0 0 0 0 0 0 0 0 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 84000 1240 0 0 28200 1220 0 0 0 0 0 0 0 0 0 0 0 0
 node "ncasc" 2005 4977.91 2040 340 p 0 0 0 0 0 0 0 0 12000 680 3200 240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 312000 3920 0 0 97100 2680 122000 5640 0 0 0 0 0 0 0 0 0 0
-node "pbias" 1349 2825.05 -30 350 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 38400 2080 0 0 5600 440 5000 400 6200 460 270800 10880 0 0 0 0 0 0
+node "pbias" 1349 2201.34 -30 350 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 38400 2080 0 0 5600 440 5000 400 6200 460 270800 10880 0 0 0 0 0 0
 node "nint" 17598 115.472 40 210 pdif 0 0 0 0 0 0 0 0 0 0 153800 7480 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 83600 1660 0 0 0 0 0 0 0 0 0 0 0 0
 node "n810" 2944 1411.08 2870 540 ndif 0 0 0 0 0 0 0 0 12000 680 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 170000 2100 0 0 152800 4300 0 0 0 0 0 0 0 0 0 0 0 0
 node "vin1" 947 513.852 -40 420 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 192000 4040 0 0 6000 320 7800 380 0 0 0 0 0 0 0 0 0 0
-node "n79" 2607 1611.09 2070 540 ndif 0 0 0 0 0 0 0 0 12000 680 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24000 1360 5800 440 114800 5580 0 0 0 0 0 0 0 0
+node "vout" 2610 2950.58 5750 540 m3 0 0 0 0 0 0 0 0 12000 680 12000 680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24000 1360 5800 440 114800 5580 152500 6200 0 0 0 0 0 0
 node "n14" 11662 1177.03 50 550 pdif 0 0 0 0 0 0 0 0 21000 1280 72000 3680 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 84000 4360 5400 420 62400 2960 0 0 0 0 0 0 0 0
 node "vdd" 20134 26040.2 -40 610 m2 0 0 0 0 1966800 9400 0 0 41600 1240 60200 3560 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 82200 4080 19300 1480 287000 13700 0 0 0 0 0 0 0 0
 substrate "gnd" 0 0 -40 0 m2 0 0 0 0 0 0 0 0 63200 3480 33400 1040 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 99500 4540 17300 1320 290600 13800 0 0 0 0 0 0 0 0
-cap "vin2" "vdd" 225.053
-cap "pbias" "n810" 199.535
-cap "vdd" "nbias" 150.569
-cap "n23" "nint" 186.212
-cap "pbias" "n23" 90.3309
-cap "n23" "vin1" 11.1813
-cap "n79" "n57" 14.062
-cap "psc" "n57" 4.51428
-cap "n14" "n68" 0.280485
-cap "pbias" "pcasc" 345.6
-cap "ncasc" "nbias" 402.887
-cap "n14" "vdd" 769.004
-cap "vin2" "nbias" 9.41176
-cap "n14" "ncasc" 485.824
-cap "pcasc" "nsc" 18.3013
-cap "n810" "n68" 44.8934
-cap "pbias" "n57" 17.04
-cap "vdd" "n810" 1720.67
-cap "n14" "vin2" 19.6755
-cap "pbias" "n79" 196.01
-cap "pbias" "psc" 173.76
-cap "n23" "vdd" 271.787
-cap "n14" "nbias" 409.862
-cap "n79" "vin1" 1.24083
-cap "ncasc" "n810" 1169.25
-cap "pcasc" "vdd" 1359.83
-cap "ncasc" "n23" 175.864
-cap "nsc" "psc" 1.70661
-cap "pbias" "nint" 389.836
-cap "ncasc" "pcasc" 183.369
-cap "n810" "nbias" 67.2021
-cap "n23" "vin2" 675.322
-cap "nint" "vin1" 103.701
-cap "pbias" "vin1" 289.726
-cap "n23" "nbias" 224.556
-cap "vdd" "n57" 9.97282
-cap "n79" "n68" 14.2701
-cap "psc" "n68" 0.363765
-cap "n14" "n810" 45.0497
-cap "vdd" "n79" 1442.93
-cap "pcasc" "nbias" 487.18
-cap "vdd" "psc" 847.102
-cap "pbias" "nsc" 13.2978
-cap "ncasc" "n57" 15.9131
-cap "n14" "n23" 174.441
-cap "ncasc" "n79" 633.458
-cap "ncasc" "psc" 457.048
-cap "pbias" "n68" 17.04
-cap "vdd" "nint" 492.857
-cap "pbias" "vdd" 1387.43
-cap "n79" "nbias" 445.543
-cap "vdd" "vin1" 593.077
-cap "nbias" "psc" 0.178905
-cap "ncasc" "nint" 0.641143
-cap "pcasc" "n810" 414.409
-cap "pbias" "ncasc" 861.941
-cap "nsc" "vdd" 37.9363
-cap "ncasc" "vin1" 10.0973
-cap "n14" "n79" 204.539
-cap "vin2" "nint" 195.622
-cap "pbias" "vin2" 309.9
-cap "vin2" "vin1" 5.37425
-cap "ncasc" "nsc" 245.281
-cap "pbias" "nbias" 1143.87
-cap "n810" "n57" 0.568075
-cap "vdd" "n68" 5.46826
-cap "n79" "n810" 388.141
-cap "n810" "psc" 57.3222
-cap "n14" "nint" 140.42
-cap "pbias" "n14" 642.345
-cap "nsc" "nbias" 197.022
-cap "ncasc" "n68" 15.2573
-cap "n23" "n79" 36.7894
-cap "n14" "vin1" 714.077
 cap "ncasc" "vdd" 811.956
-cap "pcasc" "n79" 427.873
+cap "n68" "n810" 44.8934
+cap "vdd" "n14" 769.004
+cap "ncasc" "pbias" 861.596
+cap "n14" "pbias" 642.345
+cap "ncasc" "nint" 0.641143
+cap "n68" "vdd" 5.46826
+cap "n23" "vin1" 11.1813
+cap "n14" "nint" 140.42
+cap "vout" "n810" 552.278
+cap "n68" "pbias" 17.04
+cap "nbias" "vout" 525.601
+cap "pcasc" "n810" 414.409
+cap "vout" "n57" 14.062
+cap "ncasc" "n14" 485.824
+cap "n23" "vin2" 675.322
+cap "nbias" "nsc" 197.022
+cap "vin1" "vin2" 5.37425
+cap "vdd" "vout" 2968.71
+cap "nbias" "pcasc" 487.18
+cap "vout" "pbias" 1012.63
+cap "psc" "n810" 57.3222
+cap "vdd" "nsc" 37.9363
+cap "nbias" "psc" 0.178905
+cap "pcasc" "vdd" 1359.83
+cap "ncasc" "n68" 15.2573
+cap "nsc" "pbias" 13.2978
+cap "n68" "n14" 0.280485
+cap "pcasc" "pbias" 345.6
+cap "psc" "n57" 4.51428
+cap "psc" "vdd" 847.102
+cap "nbias" "n23" 224.556
+cap "psc" "pbias" 173.76
+cap "ncasc" "vout" 1068.24
+cap "n23" "vdd" 271.787
+cap "n14" "vout" 204.539
+cap "vdd" "vin1" 593.077
+cap "nbias" "vin2" 9.41176
+cap "n23" "pbias" 90.3309
+cap "ncasc" "nsc" 245.281
+cap "vin1" "pbias" 289.726
+cap "pcasc" "ncasc" 183.369
+cap "vdd" "vin2" 225.053
+cap "n68" "vout" 14.2701
+cap "n23" "nint" 186.212
+cap "ncasc" "psc" 457.048
+cap "vin1" "nint" 103.701
+cap "vin2" "pbias" 309.9
+cap "nbias" "n810" 67.2021
+cap "ncasc" "n23" 175.864
+cap "ncasc" "vin1" 10.0973
+cap "n810" "n57" 0.568075
+cap "n23" "n14" 174.441
+cap "nint" "vin2" 195.622
+cap "n14" "vin1" 714.077
+cap "vdd" "n810" 1720.67
+cap "psc" "n68" 0.363765
+cap "nbias" "vdd" 148.777
+cap "n810" "pbias" 199.535
+cap "vout" "nsc" 74.0194
+cap "nbias" "pbias" 1143.87
+cap "pcasc" "vout" 429.546
+cap "vdd" "n57" 9.97282
+cap "n14" "vin2" 19.6755
+cap "n57" "pbias" 17.04
+cap "pcasc" "nsc" 18.3013
+cap "psc" "vout" 81.2343
+cap "vdd" "pbias" 1291.38
+cap "psc" "nsc" 1.70661
+cap "ncasc" "n810" 1169.25
+cap "n23" "vout" 36.7894
 cap "pcasc" "psc" 267.052
+cap "n14" "n810" 45.0497
+cap "vdd" "nint" 492.857
+cap "vout" "vin1" 1.24083
+cap "nbias" "ncasc" 397.63
+cap "nbias" "n14" 409.862
+cap "nint" "pbias" 389.836
+cap "ncasc" "n57" 15.9131
 device msubckt sky130_fd_pr__nfet_01v8 5290 100 5291 101 l=200 w=300 "gnd" "nsc" 400 0 "gnd" 300 12000,680 "nsc" 300 7500,350
 device msubckt sky130_fd_pr__nfet_01v8 5010 140 5011 141 l=40 w=80 "gnd" "nbias" 80 0 "gnd" 80 3200,240 "pcasc" 80 3200,240
 device msubckt sky130_fd_pr__pfet_01v8 4590 100 4591 101 l=200 w=300 "vdd" "pcasc" 400 0 "pcasc" 300 12000,680 "psc" 300 6000,340
-device msubckt sky130_fd_pr__pfet_01v8 4160 100 4161 101 l=200 w=300 "vdd" "pcasc" 400 0 "n79" 300 12000,680 "n57" 300 6000,340
+device msubckt sky130_fd_pr__pfet_01v8 4160 100 4161 101 l=200 w=300 "vdd" "pcasc" 400 0 "vout" 300 12000,680 "n57" 300 6000,340
 device msubckt sky130_fd_pr__pfet_01v8 3670 100 3671 101 l=200 w=300 "vdd" "pcasc" 400 0 "n810" 300 12000,680 "n68" 300 6000,340
 device msubckt sky130_fd_pr__nfet_01v8 2870 100 2871 101 l=200 w=600 "gnd" "nbias" 400 0 "gnd" 600 24000,1280 "n14" 600 10500,640
 device msubckt sky130_fd_pr__nfet_01v8 2070 100 2071 101 l=200 w=600 "gnd" "nbias" 400 0 "gnd" 600 24000,1280 "n23" 600 10500,640
@@ -120,6 +123,6 @@ device msubckt sky130_fd_pr__pfet_01v8 4590 340 4591 341 l=200 w=300 "vdd" "psc"
 device msubckt sky130_fd_pr__pfet_01v8 4160 340 4161 341 l=200 w=300 "vdd" "n810" 400 0 "n57" 300 6000,340 "vdd" 300 12000,680
 device msubckt sky130_fd_pr__pfet_01v8 3670 340 3671 341 l=200 w=300 "vdd" "n810" 400 0 "n68" 300 6000,340 "vdd" 300 12000,680
 device msubckt sky130_fd_pr__nfet_01v8 2870 340 2871 341 l=200 w=300 "gnd" "ncasc" 400 0 "n14" 300 10500,640 "n810" 300 12000,680
-device msubckt sky130_fd_pr__nfet_01v8 2070 340 2071 341 l=200 w=300 "gnd" "ncasc" 400 0 "n23" 300 10500,640 "n79" 300 12000,680
+device msubckt sky130_fd_pr__nfet_01v8 2070 340 2071 341 l=200 w=300 "gnd" "ncasc" 400 0 "n23" 300 10500,640 "vout" 300 12000,680
 device msubckt sky130_fd_pr__pfet_01v8 60 310 61 311 l=40 w=600 "vdd" "pbias" 80 0 "nint" 600 48600,1900 "vdd" 600 21000,1280
 device msubckt sky130_fd_pr__pfet_01v8 50 450 51 451 l=100 w=1800 "vdd" "vin1" 200 0 "nint" 1800 56600,3680 "n14" 1800 72000,3680

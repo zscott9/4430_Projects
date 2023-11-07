@@ -5,9 +5,9 @@ X0 resist vdd gnd pbias nbias sky130_hilas_Bootstrap01
 * Diff Pair Bias Trans
 X1 nint pbias vdd vdd sky130_fd_pr__pfet_01v8 w=6.0 l=0.4
 * Diff In +
-X2 n14 vin1 nint vdd sky130_fd_pr__pfet_01v8 w=3.0 l=2.0
+X2 n14 vin1 nint vdd sky130_fd_pr__pfet_01v8 w=18 l=1.0
 * Diff in -
-X3 n23 vin2 nint vdd sky130_fd_pr__pfet_01v8 w=3.0 l=2.0
+X3 n23 vin2 nint vdd sky130_fd_pr__pfet_01v8 w=18 l=1.0
 * Bias Trans 1
 X4 n14 nbias gnd gnd sky130_fd_pr__nfet_01v8 w=6 l=2.0
 * Bias Trans 2
@@ -37,10 +37,14 @@ R1 resist gnd 10
 C1 n79 gnd 0.3p
 * Sources
 V1 vin1 gnd 0 ac=1
+* VP for step response (choose 1)
+*V1 vin1 gnd PULSE(0 1 0 1u 1u 0.1m 0.2m)
 V2 vin2 gnd 0
 V3 vdd gnd 1.8
 
 * Sim
 *.dc v1 0 1.8 0.05
 .ac dec 100 1 1e9
+.meas AC V(n79) 
+*.tran 1u 1m
 *.noise V(n79) V1 dec 100 1 100meg

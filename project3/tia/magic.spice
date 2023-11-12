@@ -1,0 +1,12 @@
+* NGSPICE file created from Trial1.ext - technology: sky130A
+
+*.subckt Trial1
+X0 VOUT a_330_40# a_330_40# VOUT sky130_fd_pr__pfet_01v8 ad=0.27 pd=2.1 as=0.27 ps=2.1 w=0.45 l=6
+X1 a_1300_520# a_330_40# IN GND sky130_fd_pr__nfet_01v8 ad=0.48 pd=3.2 as=0.48 ps=3.2 w=1.2 l=0.5
+X2 VDD PBIAS VOUT VDD sky130_fd_pr__pfet_01v8 ad=1.12 pd=5.9 as=1.12 ps=5.9 w=2.5 l=0.45
+X3 VOUT a_330_40# sky130_fd_pr__cap_mim_m3_1 l=5 w=2
+X4 VDD a_330_40# sky130_fd_pr__cap_mim_m3_1 l=5 w=20
+X5 a_420_560# IN GND GND sky130_fd_pr__nfet_01v8 ad=0.175 pd=1.7 as=0.175 ps=1.7 w=0.5 l=0.4
+X6 VOUT VCASN a_420_560# GND sky130_fd_pr__nfet_01v8 ad=0.875 pd=5.7 as=0.875 ps=5.7 w=2.5 l=0.4
+*.ends
+

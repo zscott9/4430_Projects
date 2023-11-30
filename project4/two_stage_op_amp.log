@@ -1,0 +1,41 @@
+Circuit: * Comparator simulation
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+Gmin = 2.03704e-09
+Gmin = 2.18725e-10
+Gmin = 2.34854e-11
+Gmin = 2.52173e-12
+Gmin = 2.70769e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Wed Nov 29 22:09:33 2023
+Total elapsed time: 0.249 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5538
+traniter = 5098
+tranpoints = 1401
+accept = 1295
+rejected = 106
+matrix size = 16
+fillins = 2
+solver = Normal
+Avg thread counts: 3.1/2.9/2.2/1.5
+Matrix Compiler1: 1.07 KB object code size  0.3/0.3/[0.1]
+Matrix Compiler2: off  [0.2]/0.3/0.3
+

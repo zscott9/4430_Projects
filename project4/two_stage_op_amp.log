@@ -2,21 +2,21 @@ Circuit: * Comparator simulation
 
 Direct Newton iteration for .op point succeeded.
 
-Date: Mon Dec  4 00:32:34 2023
-Total elapsed time: 0.154 seconds.
+Date: Mon Dec  4 00:38:11 2023
+Total elapsed time: 0.164 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 3966
-traniter = 3947
-tranpoints = 1507
-accept = 1413
-rejected = 94
-matrix size = 17
-fillins = 3
+totiter = 3813
+traniter = 3794
+tranpoints = 1505
+accept = 1418
+rejected = 87
+matrix size = 16
+fillins = 2
 solver = Normal
 Avg thread counts: 3.2/3.5/2.6/1.7
-Matrix Compiler1: 1.56 KB object code size  0.5/0.6/[0.2]
-Matrix Compiler2: 1.58 KB object code size  0.3/0.4/[0.2]
+Matrix Compiler1: 1.60 KB object code size  0.7/0.5/[0.2]
+Matrix Compiler2: 1.52 KB object code size  0.3/0.4/[0.2]
 

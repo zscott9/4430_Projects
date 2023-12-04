@@ -24,9 +24,12 @@ X9 no2 ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 X10 no3 no2 vdd vdd sky130_fd_pr__pfet_01v8 w=2.4 l=0.4
 X11 no3 no2 gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
 
+* Psuedo Resistors
+X12 vdd vdd vinn gnd sky130_fd_pr__nfet_01v8 w=3.0 l=0.4
+X13 vinn vdd gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+
 * Simulation Components
 V1 vinp gnd PULSE(0.5 1 0 1e-15 1e-15 5e-9 10e-9)
-V2 vinn gnd 0.75
 V3 vdd gnd 1.8
 R1 resist gnd 100k
 C1 no3 gnd 1e-12

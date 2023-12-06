@@ -11,7 +11,7 @@ X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Non-Inverting Input
 X4 ncmb vinp nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Inverting Input
-X5 no1 vinn nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+X5 no1 vref nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Bottom Current Mirror Diode Connected
 X6 ncmb ncmb gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
 * Bottom Current Mirror Not Diode Connected
@@ -25,8 +25,12 @@ X10 no3 no2 vdd vdd sky130_fd_pr__pfet_01v8 w=2.4 l=0.4
 X11 no3 no2 gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
 
 * Psuedo Resistors
-X12 vdd vdd vinn gnd sky130_fd_pr__nfet_01v8 w=3.0 l=0.4
-X13 vinn vdd gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* X12 vdd vdd vinn gnd sky130_fd_pr__nfet_01v8 w=3.0 l=0.4
+* X13 vinn vdd gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+X12 vdd vdd nr1 nr1 sky130_fd_pr__nfet_01v8 w=0.8 l=1.1
+X13 vref vdd nr1 nr1 sky130_fd_pr__pfet_01v8 w=0.8 l=1.1
+X14 vref vdd nr2 nr2 sky130_fd_pr__nfet_01v8 w=0.8 l=0.5
+X15 gnd vdd nr2 nr2 sky130_fd_pr__pfet_01v8 w=0.8 l=0.5
 
 * Simulation Components
 V1 vinp gnd PULSE(0.5 1 0 1e-15 1e-15 5e-9 10e-9)

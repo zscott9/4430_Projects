@@ -85,3 +85,28 @@ X14 nsc nsc gnd gnd sky130_fd_pr__nfet_01v8 ad=0.75 pd=3.5 as=1.2 ps=6.8 w=3 l=2
 X15 n57 pcasc vout vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 l=2
 X16 psc pcasc pcasc vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 l=2
 .ends
+
+* Comparator
+.subckt comparator vinp vinn vout vdd gnd nbias 
+* Bias Current Transistor
+X1 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=4.8 l=0.4
+* Diode Connected Transistor for Bias Current Mirror
+X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
+* Bias Current Transistor for Diff Pair
+X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+* Diff Pair Non-Inverting Input
+X4 ncmb vinp nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+* Diff Pair Inverting Input
+X5 no1 vinn nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+* Bottom Current Mirror Diode Connected
+X6 ncmb ncmb gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Bottom Current Mirror Not Diode Connected
+X7 no1 ncmb gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* First CS Amplification Stage Transistor
+X8 no2 no1 gnd gnd sky130_fd_pr__nfet_01v8 w=1.8 l=0.4
+* First Amp Bias Transistor
+X9 no2 ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+* Inverter - Buffer
+X10 vout no2 vdd vdd sky130_fd_pr__pfet_01v8 w=2.4 l=0.4
+X11 vout no2 gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
+.ends

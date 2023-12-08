@@ -1,25 +1,41 @@
 Circuit: * Comparator simulation
 
-WARNING: Node NO3 is floating.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+Gmin = 2.03704e-09
+Gmin = 2.18725e-10
+Gmin = 2.34854e-11
+Gmin = 2.52173e-12
+Gmin = 2.70769e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
 
-WARNING: Less than two connections to node no3.  This node is used by c1.
-Direct Newton iteration for .op point succeeded.
 
-Date: Thu Dec  7 00:16:33 2023
-Total elapsed time: 0.174 seconds.
+Date: Thu Dec  7 18:42:07 2023
+Total elapsed time: 0.189 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 4594
-traniter = 4575
-tranpoints = 1416
-accept = 1365
-rejected = 51
-matrix size = 19
+totiter = 4923
+traniter = 4448
+tranpoints = 1402
+accept = 1337
+rejected = 65
+matrix size = 16
 fillins = 2
 solver = Normal
-Avg thread counts: 3.2/3.5/2.5/1.6
-Matrix Compiler1: 1.76 KB object code size  0.5/0.4/[0.3]
-Matrix Compiler2: off  [0.2]/0.4/0.3
+Avg thread counts: 3.2/3.5/2.3/1.6
+Matrix Compiler1: 1.58 KB object code size  0.5/0.3/[0.2]
+Matrix Compiler2: 1.52 KB object code size  0.3/0.2/[0.2]
 

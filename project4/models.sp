@@ -93,7 +93,9 @@ X1 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=4.8 l=0.4
 * Diode Connected Transistor for Bias Current Mirror
 X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
 * Bias Current Transistor for Diff Pair
-X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+* Increasing W/L (more current) quickens response time of diff pair
+* Can be reduced to 4.8 and will still work
+X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=12 l=0.4
 * Diff Pair Non-Inverting Input
 X4 ncmb vinp nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Inverting Input
@@ -109,4 +111,55 @@ X9 no2 ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Inverter - Buffer
 X10 vout no2 vdd vdd sky130_fd_pr__pfet_01v8 w=2.4 l=0.4
 X11 vout no2 gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
+.ends
+
+* Sample and Hold
+.subckt snh V+1 Clock1 Clock2 V+2 vdd gnd
+M21 N012 N010 vdd vdd test1 l=1200n w=800000n
+M22 N012 V-1 N018 vdd test1 l=1600n w=146000n
+M24 N016 N020 gnd gnd test l=1600n w=50000n
+M25 N018 N020 gnd gnd test l=1600n w=50000n
+M26 N002 N014 N016 gnd test l=1600n w=300000n
+M27 Vout1 N014 N018 gnd test l=1600n w=300000n
+M28 N007 N004 N002 vdd test1 l=1600n w=300000n
+M31 vdd N002 N007 vdd test1 l=1600n w=300000n
+M32 N008 N004 Vout1 vdd test1 l=1600n w=300000n
+M33 vdd N002 N008 vdd test1 l=1600n w=300000n
+V14 N010 gnd 0.95
+V15 N020 gnd 0.6
+V20 N004 gnd 0.65
+V17 N014 gnd 0.9
+M23 N012 V+1 N016 vdd test1 l=1600n w=146000n
+M1 N011 N009 vdd vdd test1 l=1200n w=800000n
+M2 N011 V-2 N017 vdd test1 l=1600n w=146000n
+M3 N015 N019 gnd gnd test l=1600n w=50000n
+M4 N017 N019 gnd gnd test l=1600n w=50000n
+M5 N001 N013 N015 gnd test l=1600n w=300000n
+M6 V-2 N013 N017 gnd test l=1600n w=300000n
+M7 N005 N003 N001 vdd test1 l=1600n w=300000n
+M8 vdd N001 N005 vdd test1 l=1600n w=300000n
+M9 N006 N003 V-2 vdd test1 l=1600n w=300000n
+M10 vdd N001 N006 vdd test1 l=1600n w=300000n
+V1 N009 gnd 0.95
+V2 N019 gnd 0.6
+V3 N003 gnd 0.65
+V4 N013 gnd 0.9
+M11 N011 V+2 N015 vdd test1 l=1600n w=146000n
+* T-Gates
+M12 Vout1 Clock2 V-1 gnd test l=400n w=800n
+M13 V-1 Clock1 Vout1 vdd test1 l=400n w=800n
+M14 V-2 Clock1 V-1 gnd test l=400n w=800n
+M15 V-1 Clock2 V-2 vdd test1 l=400n w=800n
+M16 V+2 Clock1 Vout1 gnd test l=400n w=800n
+M17 Vout1 Clock2 V+2 vdd test1 l=400n w=800n
+* Capacitance on output of SnH
+C1 V-2 gnd 0.1p
+C2 V+2 gnd 1p
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\ber20\AppData\Local\LTspice\lib\cmp\standard.mos
+.model test NMOS  (level=12, kp=0.00030207, Vto=0.56 Gamma=0.55708, Phi=0.5, Is=4.27e-24)
+.model test1 PMOS(KP=0.00007986, Vto=-0.9, Gamma=0.656924, Phi=0.5, Is=9.5876e-24, level=12 )
+.backanno
+.end
 .ends

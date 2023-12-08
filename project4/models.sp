@@ -163,3 +163,61 @@ C2 V+2 gnd 1p
 .backanno
 .end
 .ends
+
+* Sahaj's 1-bit dac with added t gate for correct logic
+.subckt summation vref bj bjn vsum vdd gnd N002
+M1 N005 N005 0 0 sum_nmos l=500n w=2500n
+M2 N004 N004 0 0 sum_nmos l=500n w=2500n
+M3 N003 N004 0 0 sum_nmos l=500n w=2000n
+M4 N002 N005 0 0 sum_nmos l=300n w=2400n
+M5 N001 vref N005 vdd sum_pmos l=400n w=800n
+M6 N001 N002 N004 vdd sum_pmos l=400n w=800n
+M7 vdd pbias N001 vdd sum_pmos l=200n w=3000n
+M8 vdd N003 N003 vdd sum_pmos l=500n w=2000n
+M9 vdd N003 N002 vdd sum_pmos l=300n w=2400n
+M20 N002 bjn vsum vdd sum_pmos l=400n w=2500n
+M21 N002 bj vsum 0 sum_nmos l=400n w=2500n
+M22 0 bj vsum vdd sum_pmos l=400n w=2500n
+M23 0 bjn vsum 0 sum_nmos l=400n w=2500n
+.lib C:\Users\ber20\AppData\Local\LTspice\lib\cmp\standard.mos
+.model sum_nmos nmos(level=12 phi=0.6 VTO=0.53 kp=0.00024 Gamma=0.8926 Is=4.43e-14, COX=10.4m, CJ=0.8m, CJSW=0.034n, CGDO=0.1n, CGSO=0.1n)
+.model sum_pmos pmos(level=12 phi=0.3 VTO=-1.08 kp=5.986e-5 Gamma=0.735 Is=1.26e-21, COX=10.4m, CJ=1.05m, CJSW=0.047n, CGDO=0.1n, CGSO=0.1n)
+.ends
+
+* My 1-bit dac -> no amplifier
+.subckt ibitdac vref bj bjn dacout vdd gnd
+M20 vref bjn dacout vdd sum_pmos l=400n w=2500n
+M21 vref bj dacout gnd sum_nmos l=400n w=2500n
+M22 gnd bj dacout vdd sum_pmos l=400n w=2500n
+M23 gnd bjn dacout gnd sum_nmos l=400n w=2500n
+.model sum_nmos nmos(level=12 phi=0.6 VTO=0.53 kp=0.00024 Gamma=0.8926 Is=4.43e-14, COX=10.4m, CJ=0.8m, CJSW=0.034n, CGDO=0.1n, CGSO=0.1n)
+.model sum_pmos pmos(level=12 phi=0.3 VTO=-1.08 kp=5.986e-5 Gamma=0.735 Is=1.26e-21, COX=10.4m, CJ=1.05m, CJSW=0.047n, CGDO=0.1n, CGSO=0.1n)
+.ends
+
+* G2A
+.subckt giia vh vdac clka clkan vo vdd gnd vx
+M21 N004 pbias vdd vdd test1 l=1200n w=800000n
+M22 N004 vx N006 vdd test1 l=1600n w=146000n
+M24 N005 nbias gnd gnd test l=1600n w=50000n
+M25 N006 nbias gnd gnd test l=1600n w=50000n
+M26 N001 vcasn N005 gnd test l=1600n w=300000n
+M27 vo vcasn N006 gnd test l=1600n w=300000n
+M28 N002 vcasp N001 vdd test1 l=1600n w=300000n
+M31 vdd N001 N002 vdd test1 l=1600n w=300000n
+M32 N003 vcasp vo vdd test1 l=1600n w=300000n
+M33 vdd N001 N003 vdd test1 l=1600n w=300000n
+M23 N004 gnd N005 vdd test1 l=1600n w=146000n
+M12 vh clka vx gnd test l=400n w=800n
+M13 vx clkan vh +1V8 test1 l=400n w=800n
+C1 vh vx 200f
+C2 vx vdac 200f
+C3 vx vo 100f
+M1 vx clka vo gnd test l=400n w=800n
+M2 vo clkan vx +1V8 test1 l=400n w=800n
+V1 vcasp gnd 0.65
+V2 vcasn gnd 0.9
+V3 pbias gnd 0.95
+V4 nbias gnd 0.6
+.model test NMOS  (level=12, kp=0.00030207, Vto=0.56 Gamma=0.55708, Phi=0.5, Is=4.27e-24)
+.model test1 PMOS(KP=0.00007986, Vto=-0.9, Gamma=0.656924, Phi=0.5, Is=9.5876e-24, level=12 )
+.ends

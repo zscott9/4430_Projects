@@ -1,0 +1,51 @@
+Circuit: * C:\Users\ber20\hilas_shared\4430_Projects\project4\G2A_trial.asc
+
+WARNING: Node PBIAS is floating.
+WARNING: Node NBIAS is floating.
+WARNING: Node VCASN is floating.
+WARNING: Node VCASP is floating.
+WARNING: Node CLKAN is floating.
+WARNING: Node +1V8 is floating.
+
+WARNING: Less than two connections to node pbias.  This node is used by m21.
+WARNING: Less than two connections to node clkn.  This node is used by v6.
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-05
+Gmin = 1.6455e-06
+Gmin = 1.76685e-07
+Gmin = 1.89714e-08
+Gmin = 2.03704e-09
+Gmin = 2.18725e-10
+Gmin = 2.34854e-11
+Gmin = 2.52173e-12
+Gmin = 2.70769e-13
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Thu Dec  7 23:59:52 2023
+Total elapsed time: 4.327 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 295242
+traniter = 294806
+tranpoints = 77700
+accept = 62139
+rejected = 15561
+matrix size = 25
+fillins = 8
+solver = Normal
+Avg thread counts: 3.0/1.0/1.0/1.0
+Matrix Compiler1:     156 opcodes  0.8/[0.5]/1.2
+Matrix Compiler2: off  [0.3]/0.3/0.4
+

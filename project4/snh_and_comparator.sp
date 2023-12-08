@@ -1,6 +1,5 @@
 * C:\Users\ber20\hilas_shared\4430_Projects\project4\sample_and_hold2.asc
 .include C:\Users\ber20\hilas_shared\4430_Projects\project4\models.sp
-
 * SnH
 X4 V+1 Clock1 Clock2 V+2 vdd gnd snh
 * Comparator

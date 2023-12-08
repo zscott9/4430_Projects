@@ -1,5 +1,5 @@
 * pFET model
-.subckt sky130_fd_pr__pfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=0.1 w=0.1
+.subckt sky130_fd_pr__pfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=0.4 w=0.8
     * nFET Spice Model
     .model hPMOS PMOS(Level=12 KP=0.006 Vto=-0.9 Is=18.7f Gamma=0.6213 Phi=0.42 Lambda = 0.0225)
     M1 DRAIN GATE SOURCE BODY hPMOS As={as*1e-6} Ad={ad*1e-6} Ps={ps*1e-6} Pd={pd*1e-6} L={l*1e-6} W={w*1e-6}
@@ -9,7 +9,7 @@
     C4 SOURCE BODY {0.047*ps*1e-15+1.05*as*1e-15}
 .ends
 * nFET model
-.subckt sky130_fd_pr__nfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=0.1 w=0.1
+.subckt sky130_fd_pr__nfet_01v8 DRAIN GATE SOURCE BODY params: as=0 ad=0 ps=0 pd=0 l=0.4 w=0.8
     * nFET Spice Model
     .model hNMOS NMOS(Level=12 KP=.0021 Vto=0.6 Is=6.42e-14 Gamma=0.3 Phi=0.25 Lambda = 0.2537)
     M1 DRAIN GATE SOURCE BODY hNMOS As={as*1e-6} Ad={ad*1e-6} Ps={ps*1e-6} Pd={pd*1e-6} L={l*1e-6} W={w*1e-6}
@@ -114,7 +114,7 @@ X11 vout no2 gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
 .ends
 
 * Sample and Hold
-.subckt snh V+1 Clock1 Clock2 V+2 vdd gnd
+.subckt snh V+1 Clock1 Clock2 V+2 V-2 vdd gnd
 M21 N012 N010 vdd vdd test1 l=1200n w=800000n
 M22 N012 V-1 N018 vdd test1 l=1600n w=146000n
 M24 N016 N020 gnd gnd test l=1600n w=50000n
@@ -195,7 +195,7 @@ M23 gnd bjn dacout gnd sum_nmos l=400n w=2500n
 .ends
 
 * G2A
-.subckt giia vh vdac clka clkan vo vdd gnd vx
+.subckt giia vh vdac clk_reset clk_resetn vo vdd gnd vx
 M21 N004 pbias vdd vdd test1 l=1200n w=800000n
 M22 N004 vx N006 vdd test1 l=1600n w=146000n
 M24 N005 nbias gnd gnd test l=1600n w=50000n
@@ -207,13 +207,13 @@ M31 vdd N001 N002 vdd test1 l=1600n w=300000n
 M32 N003 vcasp vo vdd test1 l=1600n w=300000n
 M33 vdd N001 N003 vdd test1 l=1600n w=300000n
 M23 N004 gnd N005 vdd test1 l=1600n w=146000n
-M12 vh clka vx gnd test l=400n w=800n
-M13 vx clkan vh +1V8 test1 l=400n w=800n
+M12 vh clk_reset vx gnd test l=400n w=800n
+M13 vx clk_resetn vh +1V8 test1 l=400n w=800n
 C1 vh vx 200f
 C2 vx vdac 200f
 C3 vx vo 100f
-M1 vx clka vo gnd test l=400n w=800n
-M2 vo clkan vx +1V8 test1 l=400n w=800n
+M1 vx clk_reset vo gnd test l=400n w=800n
+M2 vo clk_resetn vx +1V8 test1 l=400n w=800n
 V1 vcasp gnd 0.65
 V2 vcasn gnd 0.9
 V3 pbias gnd 0.95

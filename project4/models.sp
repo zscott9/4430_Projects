@@ -195,7 +195,7 @@ M23 gnd bjn dacout gnd sum_nmos l=400n w=2500n
 .ends
 
 * G2A
-.subckt giia vh vdac clk_reset clk_resetn vo vdd gnd vx
+.subckt giia vx vo vdd gnd
 M21 N004 pbias vdd vdd test1 l=1200n w=800000n
 M22 N004 vx N006 vdd test1 l=1600n w=146000n
 M24 N005 nbias gnd gnd test l=1600n w=50000n
@@ -207,13 +207,13 @@ M31 vdd N001 N002 vdd test1 l=1600n w=300000n
 M32 N003 vcasp vo vdd test1 l=1600n w=300000n
 M33 vdd N001 N003 vdd test1 l=1600n w=300000n
 M23 N004 gnd N005 vdd test1 l=1600n w=146000n
-M12 vh clk_reset vx gnd test l=400n w=800n
-M13 vx clk_resetn vh +1V8 test1 l=400n w=800n
-C1 vh vx 200f
-C2 vx vdac 200f
-C3 vx vo 100f
-M1 vx clk_reset vo gnd test l=400n w=800n
-M2 vo clk_resetn vx +1V8 test1 l=400n w=800n
+* M12 vh clk_reset vx gnd test l=400n w=800n
+* M13 vx clk_resetn vh +1V8 test1 l=400n w=800n
+* C1 vh vx 200f
+* C2 vx vdac 200f
+* C3 vx vo 100f
+* M1 vx clk_reset vo gnd test l=400n w=800n
+* M2 vo clk_resetn vx +1V8 test1 l=400n w=800n
 V1 vcasp gnd 0.65
 V2 vcasn gnd 0.9
 V3 pbias gnd 0.95

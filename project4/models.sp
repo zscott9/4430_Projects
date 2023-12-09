@@ -95,7 +95,7 @@ X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
 * Bias Current Transistor for Diff Pair
 * Increasing W/L (more current) quickens response time of diff pair
 * Can be reduced to 4.8 and will still work
-X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=12 l=0.4
+X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Non-Inverting Input
 X4 ncmb vinp nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Inverting Input
@@ -165,7 +165,7 @@ C2 V+2 gnd 1p
 .ends
 
 * Sahaj's 1-bit dac with added t gate for correct logic
-.subckt summation vref bj bjn vsum vdd gnd N002
+.subckt summation vref bj bjn vsum vdd gnd
 M1 N005 N005 0 0 sum_nmos l=500n w=2500n
 M2 N004 N004 0 0 sum_nmos l=500n w=2500n
 M3 N003 N004 0 0 sum_nmos l=500n w=2000n

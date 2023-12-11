@@ -43,7 +43,7 @@
     X18 a_n454_n612# NBIAS PBIAS VGND sky130_fd_pr__nfet_01v8 ad=0.924 pd=6.27 as=0.924 ps=6.27 w=5.96 l=0.2
 .ends
 * OTA Subcircuit
-.subckt ota_design VDD VIN1 VIN2 VGND VOUT PBIAS NBIAS
+.subckt ota_design VIN1 VIN2 VOUT VDD VGND PBIAS NBIAS
 X0 VDD VCPTEMP VCPACT VGND sky130_fd_pr__nfet_01v8 ad=0.25 pd=2 as=0.185 ps=1.3 w=0.5 l=0.4
 X1 V13 V13 VGND VGND sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.6 as=0.4 ps=2.6 w=0.8 l=0.4
 X2 VOUT VCPACT V910 VDD sky130_fd_pr__pfet_01v8 ad=0.394 pd=2.6 as=0.198 ps=1.3 w=0.78 l=0.4
@@ -195,7 +195,7 @@ M23 gnd bjn dacout gnd sum_nmos l=400n w=2500n
 .ends
 
 * G2A
-.subckt giia vx vo vdd gnd
+.subckt giia vx vn vo vdd gnd
 M21 N004 pbias vdd vdd test1 l=1200n w=800000n
 M22 N004 vx N006 vdd test1 l=1600n w=146000n
 M24 N005 nbias gnd gnd test l=1600n w=50000n
@@ -206,7 +206,7 @@ M28 N002 vcasp N001 vdd test1 l=1600n w=300000n
 M31 vdd N001 N002 vdd test1 l=1600n w=300000n
 M32 N003 vcasp vo vdd test1 l=1600n w=300000n
 M33 vdd N001 N003 vdd test1 l=1600n w=300000n
-M23 N004 gnd N005 vdd test1 l=1600n w=146000n
+M23 N004 vn N005 vdd test1 l=1600n w=146000n
 * M12 vh clk_reset vx gnd test l=400n w=800n
 * M13 vx clk_resetn vh +1V8 test1 l=400n w=800n
 * C1 vh vx 200f

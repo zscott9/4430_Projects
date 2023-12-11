@@ -43,6 +43,7 @@ V1 vin1 gnd 1.7 ac=1
 *V1 vin1 gnd SINE(0.6 0.8 1e4)
 V2 vin2 gnd 1
 V3 vdd gnd 1.8
+V4 fc_bias gnd 0.689
 
 * Sim
 .dc v1 -3 3 0.05

@@ -153,8 +153,8 @@ M15 V-1 Clock2 V-2 vdd test1 l=400n w=800n
 M16 V+2 Clock1 Vout1 gnd test l=400n w=800n
 M17 Vout1 Clock2 V+2 vdd test1 l=400n w=800n
 * Capacitance on output of SnH
-C1 V-2 gnd 0.1p
-C2 V+2 gnd 1p
+C1 V-2 gnd 10f
+C2 V+2 gnd 100f
 .model NMOS NMOS
 .model PMOS PMOS
 .lib C:\Users\ba-pe\AppData\Local\LTspice\lib\cmp\standard.mos
@@ -220,4 +220,34 @@ V3 pbias gnd 0.95
 V4 nbias gnd 0.6
 .model test NMOS  (level=12, kp=0.00030207, Vto=0.56 Gamma=0.55708, Phi=0.5, Is=4.27e-24)
 .model test1 PMOS(KP=0.00007986, Vto=-0.9, Gamma=0.656924, Phi=0.5, Is=9.5876e-24, level=12 )
+.ends
+
+.subckt subtractor vp vn vo vdd gnd nbias
+* Subtractor
+* Bias Current Transistor
+X1 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=6.0 l=0.4
+* Diode Connected Transistor for Bias Current Mirror
+X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
+* Left OTA
+* Bias Current Transistor for Diff Pair
+X3 nint_left ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Diff Pair Non-Inverting Input
+X4 ncmb_left vp nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Diff Pair Inverting Input
+X5 vo vo nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Bottom Current Mirror Diode Connected
+X6 ncmb_left ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Bottom Current Mirror Not Diode Connected
+X7 vo ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Right OTA
+* Bias Current Transistor for Diff Pair
+X8 nint_right ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Diff Pair Non-Inverting Input
+X9 ncmb_right gnd nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Diff Pair Inverting Input
+X10 vo vn nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
+* Bottom Current Mirror Diode Connected
+X11 ncmb_right ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Bottom Current Mirror Not Diode Connected
+X12 vo ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
 .ends

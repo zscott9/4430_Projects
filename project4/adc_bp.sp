@@ -17,38 +17,23 @@ X5 vref comp_out comp_out_inv dacout vdd gnd ibitdac
 * X5 vref comp_out comp_out_inv dacout vdd gnd summation
 
 * Subtractor
-* Bias Current Transistor
-X13 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Left OTA
-* Diode Connected Transistor for Bias Current Mirror
-X14 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
-* Bias Current Transistor for Diff Pair
-X15 nint_left ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Non-Inverting Input
-X16 ncmb_left vinp_left nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Inverting Input
-X17 no1 no1 nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Diode Connected
-X18 ncmb_left ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Not Diode Connected
-X19 no1 ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Right OTA
-* Bias Current Transistor for Diff Pair
-X26 nint_right ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Non-Inverting Input
-X27 ncmb_right gnd nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Inverting Input
-X28 no1 vinn_right nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Diode Connected
-X29 ncmb_right ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Not Diode Connected
-X30 no1 ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-C5 no1 gnd 1p
+* n.g. ACCURACY HIGHLY DEPENDENT ON BIAS CURRENT
+* HIGHER BIAS CURRENT -> MORE ACCURACY
+* EDIT BIAS CURRENT TRANSISTORS IN SUBCKT
+* X6 vinp_left vinn_right no1 vdd gnd nbias subtractor
+X6 vinp_left no1 fc_pbias vdd gnd fc_nbias no1 fc
+X7 gnd vinn_right fc_pbias vdd gnd fc_nbias no1 fc
+
+C5 no1 gnd 10f
+V13 vinp_left gnd 0.7
+V14 vinn_right gnd 0.6
+V15 fc_pbias gnd 0.99
+V16 fc_nbias gnd 0.689
 
 
 * Charge Pump Voltage Doubler
-C3 vct vcb 100p
-C4 vo gnd 1p
+C3 vct vcb 10f
+C4 vo gnd 10f
 X22 vxd clk_doublen vct gnd sky130_fd_pr__nfet_01v8
 X23 vo clk_double vct gnd sky130_fd_pr__nfet_01v8
 X24 vcb clk_doublen gnd gnd sky130_fd_pr__nfet_01v8

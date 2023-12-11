@@ -1,5 +1,5 @@
 * Folded Cascode Differential Amplifier
-.include C:\Users\ber20\hilas_shared\4430_Projects\project3\models.sp
+.include C:\Users\ba-pe\Documents\4430_Projects\project3\models.sp
 * Bootstrap
 X0 resist vdd gnd pbias nbias sky130_hilas_Bootstrap01
 * Diff Pair Bias Trans

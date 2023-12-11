@@ -1,5 +1,5 @@
 * Transconductance Amplifier Design w/ Cascode
-.include C:\Users\ber20\hilas_shared\4430_Projects\project2\models.sp
+.include C:\Users\ba-pe\Documents\4430_Projects\project2\models.sp
 * Bias Trans
 X0 vint pbias vdd vdd sky130_fd_pr__pfet_01v8 w=1.6 l=0.4
 * Diff In +

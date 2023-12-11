@@ -157,7 +157,7 @@ C1 V-2 gnd 0.1p
 C2 V+2 gnd 1p
 .model NMOS NMOS
 .model PMOS PMOS
-.lib C:\Users\ber20\AppData\Local\LTspice\lib\cmp\standard.mos
+.lib C:\Users\ba-pe\AppData\Local\LTspice\lib\cmp\standard.mos
 .model test NMOS  (level=12, kp=0.00030207, Vto=0.56 Gamma=0.55708, Phi=0.5, Is=4.27e-24)
 .model test1 PMOS(KP=0.00007986, Vto=-0.9, Gamma=0.656924, Phi=0.5, Is=9.5876e-24, level=12 )
 .backanno
@@ -179,7 +179,7 @@ M20 N002 bjn vsum vdd sum_pmos l=400n w=2500n
 M21 N002 bj vsum 0 sum_nmos l=400n w=2500n
 M22 0 bj vsum vdd sum_pmos l=400n w=2500n
 M23 0 bjn vsum 0 sum_nmos l=400n w=2500n
-.lib C:\Users\ber20\AppData\Local\LTspice\lib\cmp\standard.mos
+.lib C:\Users\ba-pe\AppData\Local\LTspice\lib\cmp\standard.mos
 .model sum_nmos nmos(level=12 phi=0.6 VTO=0.53 kp=0.00024 Gamma=0.8926 Is=4.43e-14, COX=10.4m, CJ=0.8m, CJSW=0.034n, CGDO=0.1n, CGSO=0.1n)
 .model sum_pmos pmos(level=12 phi=0.3 VTO=-1.08 kp=5.986e-5 Gamma=0.735 Is=1.26e-21, COX=10.4m, CJ=1.05m, CJSW=0.047n, CGDO=0.1n, CGSO=0.1n)
 .ends

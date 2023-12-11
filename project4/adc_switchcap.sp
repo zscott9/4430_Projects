@@ -15,36 +15,26 @@ X4 comp_out_inv comp_out gnd gnd sky130_fd_pr__nfet_01v8 w=2.4 l=0.4
 * 1 bit DAC
 X5 vref comp_out comp_out_inv dacout vdd gnd ibitdac
 * X5 vref comp_out comp_out_inv dacout vdd gnd summation
+* Cap. Switching Subtractor
+* Cap has to be large enough, otherwise voltage won't go to correct value if difference is small
+C2 vcap vcapb 100p
+* Switches - essentially spdt that switch between the two inputs and the single output/gnd
+X14 comp_in clk_amp vcap gnd sky130_fd_pr__nfet_01v8
+X15 comp_in clk_ampn vcap vdd sky130_fd_pr__pfet_01v8
+X16 dacout clk_amp vcapb gnd sky130_fd_pr__nfet_01v8
+X17 dacout clk_ampn vcapb vdd sky130_fd_pr__pfet_01v8
+X18 vx clk_ampn vcap gnd sky130_fd_pr__nfet_01v8
+X19 vx clk_amp vcap vdd sky130_fd_pr__pfet_01v8
+X20 vcapb clk_ampn gnd gnd sky130_fd_pr__nfet_01v8
+X21 vcapb clk_amp gnd vdd sky130_fd_pr__pfet_01v8
 
-* Subtractor
-* Bias Current Transistor
-X13 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Left OTA
-* Diode Connected Transistor for Bias Current Mirror
-X14 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
-* Bias Current Transistor for Diff Pair
-X15 nint_left ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Non-Inverting Input
-X16 ncmb_left vinp_left nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Inverting Input
-X17 no1 no1 nint_left vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Diode Connected
-X18 ncmb_left ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Not Diode Connected
-X19 no1 ncmb_left gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Right OTA
-* Bias Current Transistor for Diff Pair
-X26 nint_right ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Non-Inverting Input
-X27 ncmb_right gnd nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Diff Pair Inverting Input
-X28 no1 vinn_right nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Diode Connected
-X29 ncmb_right ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-* Bottom Current Mirror Not Diode Connected
-X30 no1 ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
-C5 no1 gnd 1p
-
+* Non inverting op amp with psuedo resistors
+XU1 vx vxd vdd gnd vxd level2 Avol=1Meg GBW=10Meg Slew=10Meg Ilimit=25m Rail=0 Vos=0 En=0 Enk=0 In=0 Ink=0 Rin=500Meg
+* X22 div1 div1 vn vn sky130_fd_pr__nfet_01v8
+* X23 div1 div1 gnd gnd sky130_fd_pr__nfet_01v8
+* X24 div2 div2 vn vn sky130_fd_pr__nfet_01v8
+* X25 div2 div2 vo vo sky130_fd_pr__nfet_01v8
+.lib UniversalOpAmp2.lib
 
 * Charge Pump Voltage Doubler
 C3 vct vcb 100p

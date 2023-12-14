@@ -87,7 +87,7 @@ X16 psc pcasc pcasc vdd sky130_fd_pr__pfet_01v8 ad=0.6 pd=3.4 as=1.2 ps=6.8 w=3 
 .ends
 
 * Comparator
-.subckt comparator vinp vinn vout vdd gnd nbias 
+.subckt comparator vinp vinn vout no2 vdd gnd nbias
 * Bias Current Transistor
 X1 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=4.8 l=0.4
 * Diode Connected Transistor for Bias Current Mirror
@@ -95,7 +95,7 @@ X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
 * Bias Current Transistor for Diff Pair
 * Increasing W/L (more current) quickens response time of diff pair
 * Can be reduced to 4.8 and will still work
-X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
+X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=12.0 l=0.4
 * Diff Pair Non-Inverting Input
 X4 ncmb vinp nint vdd sky130_fd_pr__pfet_01v8 w=4.8 l=0.4
 * Diff Pair Inverting Input
@@ -154,7 +154,7 @@ M16 V+2 Clock1 Vout1 gnd test l=400n w=800n
 M17 Vout1 Clock2 V+2 vdd test1 l=400n w=800n
 * Capacitance on output of SnH
 C1 V-2 gnd 10f
-C2 V+2 gnd 100f
+C2 V+2 gnd 500f
 .model NMOS NMOS
 .model PMOS PMOS
 .lib C:\Users\ba-pe\AppData\Local\LTspice\lib\cmp\standard.mos
@@ -250,4 +250,26 @@ X10 vo vn nint_right vdd sky130_fd_pr__pfet_01v8 w=0.8 l=0.4
 X11 ncmb_right ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
 * Bottom Current Mirror Not Diode Connected
 X12 vo ncmb_right gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+.ends
+
+.subckt wide_ota vp vn vo vdd gnd nbias
+* Bias Current Transistor
+X1 ncmt nbias gnd gnd sky130_fd_pr__nfet_01v8 w=8.0 l=0.4
+* Diode Connected Transistor for Bias Current Mirror
+X2 ncmt ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=0.4
+* Bias Current Transistor for Diff Pair
+X3 nint ncmt vdd vdd sky130_fd_pr__pfet_01v8 w=2.0 l=0.4
+* Diff Pair Non-Inverting Input
+X4 vpcm1 vp nint vdd sky130_fd_pr__pfet_01v8 w=6.4 l=0.4
+* Non-inverting current mirror
+X5 vpcm1 vpcm1 gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+X6 vo vpcm1 gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Diff Pair Inverting Input
+X7 vncm1 vn nint vdd sky130_fd_pr__pfet_01v8 w=6.4 l=0.4
+* First inverting current mirror
+X8 vncm1 vncm1 gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+X9 vncm2 vncm1 gnd gnd sky130_fd_pr__nfet_01v8 w=0.8 l=0.4
+* Second inverting current mirror
+X10 vncm2 vncm2 vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=4.8
+X11 vo vncm2 vdd vdd sky130_fd_pr__pfet_01v8 w=0.4 l=4.8
 .ends

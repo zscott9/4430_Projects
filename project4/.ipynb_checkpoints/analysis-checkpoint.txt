@@ -1,0 +1,38 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+comp_data = pd.read_csv("C:\\Users\\ba-pe\\Documents\\4430_Projects\\project4\\data\\compdata.csv")
+time = comp_data['time']
+vx = comp_data['V(vinp)']
+bj_inv = comp_data['V(vout_inv)']
+bj = comp_data['V(vout)']
+fig, axs = plt.subplots(3,1)
+fig.tight_layout()
+axs[0].plot(time, vx, 'b')
+axs[0].set(ylabel="Vx (V)")
+axs[1].plot(time, bj, 'orange')
+axs[1].set(ylabel="bj (V)")
+axs[2].plot(time, bj_inv, 'r')
+axs[2].set(xlabel="Time (s)", ylabel = "!bj (V)")
+
+adc_data = pd.read_csv("C:\\Users\\ba-pe\\Documents\\4430_Projects\\project4\\data\\adc_data.csv")
+time = adc_data['time']
+sample = adc_data['V(clk_sample)']
+amp = adc_data['V(clk_amp)']
+load = adc_data['V(clk_load)']
+double = adc_data['V(clk_double)']
+out = adc_data['V(comp_out)']
+fig, axs = plt.subplots(5,1,figsize=(5, 10))
+fig.tight_layout()
+axs[0].plot(time, out, 'b')
+axs[0].text(0.4e-6, 1, "1")
+axs[0].text(1e-6, 0, "1")
+axs[0].set(ylabel="bj (V)")
+axs[1].plot(time, sample, 'r')
+axs[1].set(ylabel="Sample (V)")
+axs[2].plot(time, amp, 'orange')
+axs[2].set(ylabel="Compare (V)")
+axs[3].plot(time, double, 'y')
+axs[3].set(ylabel="Double (V)")
+axs[4].plot(time, load, 'g')
+axs[4].set(xlabel="Time (s)", ylabel="Load (V)")
